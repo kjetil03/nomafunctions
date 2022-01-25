@@ -1,0 +1,32 @@
+Package: nomafunctions
+Type: Package
+Title: Hjelpefunksjoner til manipulering av data i Norske Markeder
+Version: 0.1.0
+Authors@R: 
+    person(given = "Kjetil",
+           family = "Stiansen",
+           role = c("aut", "cre"),
+           email = "kjetil.stiansen@norges-bank.no",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Pakka inneholder diverse funksjoner for å bearbeide data som brukes i norske markeder. 
+              For eksempel funksjoner for å regne ut utestående volum, beregne løpetider og annet for ulike instrumenter. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Imports: 
+    dplyr,
+    bizdays,
+    magrittr,
+    rpdfunksjoner,
+    stringr,
+    lubridate,
+    Rblpapi,
+    purrr,
+    RODBC,
+    rlang,
+    tidyr,
+    tidyselect,
+    plotly
+Depends: 
+    R (>= 2.10)
