@@ -1,4 +1,3 @@
-
 #' Plot tidy data
 #'
 #' @param df dataframe med data
@@ -141,7 +140,7 @@ noma_tidy_plot = function(df,
 
     type = "bar"
     mode = NULL
-    barmode = "stack"
+    barmode = "relative"
     style = NULL
     marker = NULL
     size = NULL
@@ -189,17 +188,12 @@ noma_tidy_plot = function(df,
 
   #Dobbeltsjekk at df ikke er gruppert
   df = ungroup(df)
-  #Denne løser en veldig skjelden bug, der aksene blir feil pga. utelukking av helger
 
-  #df = df[lubridate::wday(df[[xcol]], week_start = 1) < 6, ]
-
-
-
-
-
-  #Gjør om x-kolonnen til character. Det gjør plotting lettere
-  #df[[xcol]] = as.character(df[[xcol]])
-
+  #Quasiquote xcol og ycol. skjønner ikke det her ass.
+  # xcol = enexpr(xcol)
+  # ycol = enexpr(ycol)
+  # sorting_var = enexpr(sorting_var)
+  
   #Overskriv legendtext hvis sorting_var er spesifisert
   if(!is.null(sorting_var) & !is.null(legendtext)) {
     legendtext = NULL
@@ -273,6 +267,7 @@ noma_tidy_plot = function(df,
 
   } else {
 
+    
 
     if(is.null(custom_hover_text)) {
 

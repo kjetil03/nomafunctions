@@ -84,11 +84,11 @@ Plot tidy data
            marker_size = "PrincipalAmount",
            legend_options = list(showlegend = T),
            sizename = "Utstedt volum (mill USD)",
-           plot_title = "Rente pÃ¥ nye utstedelser i 3m CP/CD vs Libor",
+           plot_title = "Rente på nye utstedelser i 3m CP/CD vs Libor",
            colors = nb_colors,
            custom_hover_text = paste("Utsteder: ", k$ParentName,
                                    "<br> Rente", k$InterestRate,
-                                   "<br> LÃ¸petid (dager): ", k$TimeToMaturity,
+                                   "<br> Løpetid (dager): ", k$TimeToMaturity,
                                     "<br> Volum (mill usd):", round(k$PrincipalAmount/10^6,2),
                                     "<br> Produkttype", k$ProductType)) }
 }

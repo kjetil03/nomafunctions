@@ -13,7 +13,7 @@ Description: Pakka inneholder diverse funksjoner for å bearbeide data som bruke
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Imports: 
     dplyr,
     bizdays,
