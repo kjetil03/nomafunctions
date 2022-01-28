@@ -112,7 +112,7 @@ calculate_outstanding <- function(df,
 
   #Sett opp datoliste
   min_date <- as.Date("1941-01-01")
-  max_date <- max(new$date)
+  max_date <- as.Date("2100-01-01")
 
   #Bruker norske helligdager for å lage business days (kunne valgt amerikanske og, men
   #antar at det er norsk datoakse vi er mest interesserte i)
