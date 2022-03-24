@@ -18,7 +18,6 @@ Imports:
     dplyr,
     bizdays,
     magrittr,
-    rpdfunksjoner,
     stringr,
     lubridate,
     Rblpapi,
