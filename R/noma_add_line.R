@@ -31,19 +31,20 @@ noma_add_line = function(p, df, xcol, ycol, p_xcol, name = ycol, color = NULL) {
   p_min_xcol = min(environment(p[["x"]][["visdat"]][[1]])[["data"]][[p_xcol]])
   p_max_xcol = max(environment(p[["x"]][["visdat"]][[1]])[["data"]][[p_xcol]])
 
-  df = df[(df[[xcol]] >= p_min_xcol & df[[xcol]] <= p_max_xcol) &
-            !lubridate::wday(df[[xcol]], week_start = 1) %in% c(6,7), ]
+  df = df[(df[[xcol]] >= p_min_xcol & df[[xcol]] <= p_max_xcol), ]
 
-  # if(is.null(colors)) {
-  #
-  #   colors = environment(p[["x"]][["visdat"]][[1]])[["attrs"]][["colors"]]
-  #
-  # } else{
-  #
-  #   colors = colors
-  #
+
+  # if(length(df[[xcol]][lubridate::wday(df[[xcol]], week_start = 1) > 5]) > 0) {
+  #   
+  #   rangebreaks = NULL
+  #   
+  #   
+  # } else {
+  #   
+  #   rangebreaks = list(
+  #     list(bounds=list("sat", "mon")))
+  #   
   # }
-
 
   p = p %>% add_trace(x = df[[xcol]],
                       y = df[[ycol]],
